@@ -14,42 +14,42 @@ class MarketAPI(Client):
             params = {'instType': instType, 'uly': uly, 'instFamily': instFamily}
         else:
             params = {'instType': instType, 'instFamily': instFamily}
-        return self._request_with_params(GET, TICKERS_INFO, params)
+        return self._request_with_params(GET, MARKET_TICKERS_INFO, params)
 
     # Get Ticker
     def get_ticker(self, instId):
         params = {'instId': instId}
-        return self._request_with_params(GET, TICKER_INFO, params)
+        return self._request_with_params(GET, MARKET_TICKER_INFO, params)
 
     # Get Index Tickers
     def get_index_tickers(self, quoteCcy='', instId=''):
         params = {'quoteCcy': quoteCcy, 'instId': instId}
-        return self._request_with_params(GET, INDEX_TICKERS, params)
+        return self._request_with_params(GET, MARKET_INDEX_TICKERS, params)
 
     # Get Order Book
     def get_orderbook(self, instId, sz=''):
         params = {'instId': instId, 'sz': sz}
-        return self._request_with_params(GET, ORDER_BOOKS, params)
+        return self._request_with_params(GET, MARKET_ORDER_BOOKS, params)
 
     # Get Candlesticks
     def get_candlesticks(self, instId, after='', before='', bar='', limit=''):
         params = {'instId': instId, 'after': after, 'before': before, 'bar': bar, 'limit': limit}
-        return self._request_with_params(GET, MARKET_CANDLES, params)
+        return self._request_with_params(GET, MARKET_MARKET_CANDLES, params)
 
     # GGet Candlesticks History（top currencies only）
     def get_history_candlesticks(self, instId, after='', before='', bar='', limit=''):
         params = {'instId': instId, 'after': after, 'before': before, 'bar': bar, 'limit': limit}
-        return self._request_with_params(GET, HISTORY_CANDLES, params)
+        return self._request_with_params(GET, MARKET_HISTORY_CANDLES, params)
 
     # Get Index Candlesticks
     def get_index_candlesticks(self, instId, after='', before='', bar='', limit=''):
         params = {'instId': instId, 'after': after, 'before': before, 'bar': bar, 'limit': limit}
-        return self._request_with_params(GET, INDEX_CANSLES, params)
+        return self._request_with_params(GET, MARKET_INDEX_CANSLES, params)
 
     # Get Mark Price Candlesticks
     def get_mark_price_candlesticks(self, instId, after='', before='', bar='', limit=''):
         params = {'instId': instId, 'after': after, 'before': before, 'bar': bar, 'limit': limit}
-        return self._request_with_params(GET, MARKPRICE_CANDLES, params)
+        return self._request_with_params(GET, MARKET_MARKPRICE_CANDLES, params)
 
     # Get Index Candlesticks
     def get_trades(self, instId, limit=''):
@@ -58,11 +58,11 @@ class MarketAPI(Client):
 
     # Get Volume
     def get_volume(self):
-        return self._request_without_params(GET, VOLUMNE)
+        return self._request_without_params(GET, MARKET_24_VOLUMNE)
 
     # Get Oracle
-    def get_oracle(self):
-        return self._request_without_params(GET, ORACLE)
+    def get_open_oracle(self):
+        return self._request_without_params(GET, MARKET_OPEN_ORACLE)
 
     # Get Tier
     def get_tier(self, instType='', tdMode='', uly='', instId='', ccy='', tier=''):
@@ -74,12 +74,12 @@ class MarketAPI(Client):
         param = {
             'index':index
         }
-        return self._request_with_params(GET,INDEX_COMPONENTS,param)
+        return self._request_with_params(GET,MARKET_INDEX_COMPONENTS,param)
 
 
     #GET /api/v5/market/exchange-rate
     def get_exchange_rate(self):
-        return self._request_without_params(GET, EXCHANGE_RATE)
+        return self._request_without_params(GET, MARKET_EXCHANGE_RATE)
 
     #GET /api/v5/market/history-trades
     def get_history_trades(self,instId = '',type = '',after = '',before = '',limit = ''):
@@ -90,14 +90,14 @@ class MarketAPI(Client):
             'before':before,
             'limit':limit
         }
-        return self._request_with_params(GET,HISTORY_TRADES,params)
+        return self._request_with_params(GET,MARKET_HISTORY_TRADES,params)
 
     #GET /api/v5/market/block-ticker
     def get_block_ticker(self,instId = ''):
         params = {
             'instId':instId
         }
-        return self._request_with_params(GET,BLOCK_TICKER,params)
+        return self._request_with_params(GET,MARKET_BLOCK_TICKER,params)
 
     #GET /api/v5/market/block-tickers
     def get_block_tickers(self,instType = '',uly = '', instFamily = ''):
@@ -106,14 +106,14 @@ class MarketAPI(Client):
             'uly':uly,
             'instFamily':instFamily
         }
-        return self._request_with_params(GET, BLOCK_TICKERS, params)
+        return self._request_with_params(GET, MARKET_BLOCK_TICKERS, params)
 
     #GET /api/v5/market/block-trades
     def get_block_trades(self,instId = ''):
         params = {
             'instId':instId
         }
-        return self._request_with_params(GET, BLOCK_TRADES, params)
+        return self._request_with_params(GET, MARKET_BLOCK_TRADES, params)
 
 
 

@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="python-okx",
+    name="okx-api-python",
     version=okx.__version__,
     author="okxv5api",
     author_email="api@okg.com",

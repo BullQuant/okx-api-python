@@ -4,12 +4,12 @@ from ..okx import MarketData
 
 '''
 ORACLE = '/api/v5/market/open-oracle' #need to update? if it is open oracle
-INDEX_COMPONENTS = '/api/v5/market/index-components' #need to add
-EXCHANGE_RATE = '/api/v5/market/exchange-rate' #need to add
-HISTORY_TRADES = '/api/v5/market/history-trades' #need to add
-BLOCK_TICKERS = '/api/v5/market/block-tickers' #need to add
-BLOCK_TICKER = '/api/v5/market/block-ticker'#need to add
-BLOCK_TRADES = '/api/v5/market/block-trades'#need to add
+MARKET_OPEN_ORACLE = '/api/v5/market/index-components' #need to add
+MARKET_EXCHANGE_RATE = '/api/v5/market/exchange-rate' #need to add
+MARKET_HISTORY_TRADES = '/api/v5/market/history-trades' #need to add
+MARKET_BLOCK_TICKERS = '/api/v5/market/block-tickers' #need to add
+MARKET_BLOCK_TICKER = '/api/v5/market/block-ticker'#need to add
+MARKET_BLOCK_TRADES = '/api/v5/market/block-trades'#need to add
 '''
 
 class MarketAPITest(unittest.TestCase):
